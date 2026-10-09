@@ -111,7 +111,7 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
 /* desktop: each section fills one screen (fold) and is centred in it; figures shrink to fit the height */
 @media (min-width: 861px) and (min-height: 620px) {
   html { scroll-snap-type: y proximity; scroll-padding-top: 0; }
-  .hero, section.block, footer.approach { scroll-snap-align: start; }
+  section.block, footer.approach { scroll-snap-align: start; }
   .hero { min-height: calc(100svh - 80px); align-content: center; padding-block: 24px 40px; }
   section.block { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 28px; }
   .sec-head { margin-bottom: clamp(20px, 3.5svh, 40px); }

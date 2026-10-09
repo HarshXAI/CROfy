@@ -57,8 +57,8 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 1
 
 /* hero: text only, centred */
 .hero { text-align: center; padding-block: clamp(56px, 11vw, 128px) clamp(56px, 9vw, 104px); display: grid; justify-items: center; }
-.hero .tagline { margin-top: 22px; font: 700 clamp(28px, 4.2vw, 44px)/1.1 "Caveat", cursive; color: var(--pen-text); transform: rotate(-2deg); }
-.hero .tagline span { background: linear-gradient(transparent 62%, var(--blush) 62%); padding-inline: 4px; }
+.approach .tagline { text-align: center; margin-top: clamp(40px, 6vw, 72px); font: 700 clamp(34px, 6vw, 64px)/1.1 "Caveat", cursive; color: var(--on-ink); transform: rotate(-1.5deg); }
+.approach .tagline span { color: #ff7a5c; text-decoration: underline wavy #ff7a5c; text-decoration-thickness: 2px; text-underline-offset: 8px; }
 .hero h1 { font-size: clamp(38px, 6.4vw, 76px); line-height: 1.03; font-weight: 800; margin: 18px 0 24px; max-width: 20ch; }
 .hero .sub, .hero .answer-line { text-wrap: balance; }
 .hero .sub { font-size: clamp(19px, 2.3vw, 24px); color: var(--ink-soft); max-width: 46ch; }
@@ -234,7 +234,6 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
     <div class="hero">
       <h1>Why do shoppers <span class="mark">leave without buying?</span></h1>
       <p class="sub">CROfy finds where your online store loses buyers, and what to fix first.</p>
-      <p class="tagline">Doing things the <span>CROfy</span> way.</p>
       <div class="cta">
         <a class="cta-btn" href="#waitlist">Join the waitlist</a>
         <p class="reassure">Tell us what's going wrong on your store. We're opening to a small group of brands first.</p>
@@ -479,6 +478,7 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
         </div>
       </div>
     </div>
+    <p class="tagline">Doing things the <span>CROfy</span> way.</p>
     <div class="legal">
       <span>What you tell us stays with us. We won't share your name or numbers without your OK.</span>
       <span>CROfy · 2026</span>

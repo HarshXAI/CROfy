@@ -108,6 +108,18 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
 .fix .answer::before { content: "→"; position: absolute; left: 0; top: 0; color: var(--pen); font: 600 17px/1.5 var(--mono); }
 .fix .answer b { color: var(--ink); }
 
+/* desktop: each section fills one screen (fold) and is centred in it; figures shrink to fit the height */
+@media (min-width: 861px) and (min-height: 620px) {
+  html { scroll-snap-type: y proximity; scroll-padding-top: 0; }
+  .hero, section.block, footer.approach { scroll-snap-align: start; }
+  .hero { min-height: calc(100svh - 80px); align-content: center; padding-block: 24px 40px; }
+  section.block { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 28px; }
+  .sec-head { margin-bottom: clamp(20px, 3.5svh, 40px); }
+  .devices { max-width: min(100%, max(640px, calc((100svh - 400px) * 2.3))); margin-inline: auto; }
+  .pins { margin-top: clamp(20px, 3.5svh, 40px); }
+  .tunnel-fig { max-width: min(880px, max(480px, calc((100svh - 640px) * 1.6))); margin-bottom: clamp(20px, 4svh, 48px); }
+}
+
 /* CRO notes */
 .notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 22px; padding: 32px 26px; border-radius: 12px; border: 6px solid #b8895a; background: #d9b27c radial-gradient(rgba(0,0,0,.09) 1px, transparent 1.5px) 0 0 / 7px 7px; box-shadow: inset 0 2px 8px rgba(0,0,0,.18); }
 .note { --c: #fff3a3; position: relative; background: var(--c); border: 0; border-radius: 2px; padding: 30px 22px 26px; display: grid; gap: 10px; align-content: start; box-shadow: 0 1px 1px rgba(0,0,0,.15), 0 10px 14px -6px rgba(0,0,0,.35); transform: rotate(var(--r, 0deg)); transition: transform .2s; }

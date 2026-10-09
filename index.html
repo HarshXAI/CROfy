@@ -142,6 +142,7 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
 /* waitlist form */
 .form-card { background: var(--sheet); color: var(--ink); border-radius: 10px; padding: clamp(22px, 3vw, 32px); box-shadow: 0 1px 0 rgba(0,0,0,.2); }
 #waitlist-form { display: grid; gap: 16px; }
+#waitlist-form[hidden] { display: none; }
 .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .field { display: grid; gap: 6px; margin: 0; padding: 0; border: 0; min-width: 0; }
 .field > span, .field legend { font: 500 12px/1.4 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); padding: 0; margin-bottom: 6px; }

@@ -34,7 +34,7 @@
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { overflow-x: clip; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--display); -webkit-font-smoothing: antialiased; }
 .wrap { max-width: var(--col); margin: 0 auto; padding-inline: 20px; }
@@ -47,6 +47,9 @@ a:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; border-rad
 
 /* nav */
 nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 20px; }
+nav { position: sticky; top: 0; z-index: 50; }
+nav::before { content: ""; position: absolute; z-index: -1; inset: 0 calc(50% - 50vw); background: rgba(245,246,242,.55); -webkit-backdrop-filter: blur(16px) saturate(1.6); backdrop-filter: blur(16px) saturate(1.6); border-bottom: 1px solid rgba(24,33,46,.08); opacity: 0; transition: opacity .25s; pointer-events: none; }
+nav.glass::before { opacity: 1; }
 .wordmark { font-family: "Urbanist", sans-serif; font-style: italic; font-weight: 800; font-size: 32px; line-height: 1; letter-spacing: -0.04em; color: #18212e; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
 .wordmark b { color: #d23a1f; font-weight: 800; }
 .wordmark .dot { width: 14px; height: 14px; border: 2px solid var(--pen); border-radius: 50%; display: inline-grid; place-items: center; }
@@ -110,7 +113,7 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
 
 /* desktop: each section fills one screen (fold) and is centred in it; figures shrink to fit the height */
 @media (min-width: 861px) and (min-height: 620px) {
-  html { scroll-snap-type: y proximity; scroll-padding-top: 0; }
+  html { scroll-snap-type: y proximity; }
   section.block, footer.approach { scroll-snap-align: start; }
   .hero { min-height: calc(100svh - 80px); align-content: center; padding-block: 24px 40px; }
   section.block { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 28px; }
@@ -612,6 +615,13 @@ const WHATSAPP_NUMBER = "918097665785";
     bar.classList.toggle("away", seen.size > 0);
   }, { threshold: 0.05 });
   io.observe(form); io.observe(hero);
+})();
+</script>
+<script>
+(function () {
+  var nav = document.querySelector("nav"), hero = document.querySelector(".hero");
+  function f() { nav.classList.toggle("glass", hero.getBoundingClientRect().bottom < nav.offsetHeight); }
+  addEventListener("scroll", f, { passive: true }); f();
 })();
 </script>
 </body>

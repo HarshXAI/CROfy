@@ -48,7 +48,7 @@ a:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; border-rad
 /* nav */
 nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 20px; }
 nav { position: sticky; top: 0; z-index: 50; }
-nav::before { content: ""; position: absolute; z-index: -1; inset: 0 calc(50% - 50vw); background: rgba(245,246,242,.55); -webkit-backdrop-filter: blur(16px) saturate(1.6); backdrop-filter: blur(16px) saturate(1.6); border-bottom: 1px solid rgba(24,33,46,.08); opacity: 0; transition: opacity .25s; pointer-events: none; }
+nav::before { content: ""; position: absolute; z-index: -1; inset: 0 calc(50% - 50vw); background: rgba(245,246,242,.5); -webkit-backdrop-filter: blur(18px) saturate(1.6); backdrop-filter: blur(18px) saturate(1.6); border-bottom: 1px solid rgba(24,33,46,.08); opacity: 0; transition: opacity .25s; pointer-events: none; }
 nav.glass::before { opacity: 1; }
 .wordmark { font-family: "Urbanist", sans-serif; font-style: italic; font-weight: 800; font-size: 32px; line-height: 1; letter-spacing: -0.04em; color: #18212e; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
 .wordmark b { color: #d23a1f; font-weight: 800; }
@@ -619,8 +619,8 @@ const WHATSAPP_NUMBER = "918097665785";
 </script>
 <script>
 (function () {
-  var nav = document.querySelector("nav"), hero = document.querySelector(".hero");
-  function f() { nav.classList.toggle("glass", hero.getBoundingClientRect().bottom < nav.offsetHeight); }
+  var nav = document.querySelector("nav");
+  function f() { nav.classList.toggle("glass", scrollY > 8); }
   addEventListener("scroll", f, { passive: true }); f();
 })();
 </script>

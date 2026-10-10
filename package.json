@@ -1,0 +1,23 @@
+{
+  "name": "crofy",
+  "version": "1.0.0",
+  "description": "CROfy - Conversion rate optimization research for D2C brands",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarshXAI/CROfy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarshXAI/CROfy/issues"
+  },
+  "homepage": "https://github.com/HarshXAI/CROfy#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}

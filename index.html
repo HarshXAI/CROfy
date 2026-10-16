@@ -83,6 +83,10 @@ nav.glass::before { opacity: 1; }
 .hero .answer-line { margin-top: 14px; font-size: clamp(18px, 2vw, 21px); font-weight: 700; max-width: 40ch; }
 .hero .cta { margin-top: 36px; display: grid; gap: 14px; justify-items: center; }
 .hero .reassure { font-size: 15px; color: var(--ink-soft); }
+.how { list-style: none; margin: 40px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; font: 14px/1.4 var(--mono); color: var(--ink-soft); }
+.how li { display: flex; align-items: center; gap: 10px; }
+.how b { flex: none; width: 26px; height: 26px; border: 2px solid var(--pen); border-radius: 50%; display: grid; place-items: center; color: var(--pen-text); font: 600 13px/1 var(--mono); }
+.how strong { color: var(--ink); font-weight: 500; }
 
 /* sections */
 section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7vw, 80px); }
@@ -251,6 +255,9 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
 }
 @media (max-width: 560px) {
   body { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); font-size: 16px; }
+  .hero h1 { line-height: 1.2; }
+  .hero h1 .q { font-size: 1.15em; vertical-align: 0; margin-left: .1em; }
+  .how { display: grid; justify-content: center; justify-items: start; gap: 12px; margin-top: 32px; }
   .wrap { padding-inline: 16px; }
   .devices { grid-template-columns: 1fr; justify-items: center; }
   .dev-phone { max-width: 200px; }
@@ -300,12 +307,17 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
   <main id="top">
     <!-- 1. Hero: text only, centred -->
     <div class="hero">
-      <h1>Why do shoppers <span class="mark">leave without buying<span class="q">?</span></span></h1>
+      <h1>Why do shoppers <span class="mark">leave without buying</span><span class="q">?</span></h1>
       <p class="sub">Paste one product link. We record what a shopper sees on phone and laptop, and the first thing to fix.</p>
       <div class="cta">
         <a class="cta-btn" href="#waitlist">Get a free 2-min video of your product page</a>
         <p class="reassure">Free. In your inbox within 48 hours.</p>
       </div>
+      <ol class="how" aria-label="How it works">
+        <li><b>1</b><span><strong>Paste a link</strong> to one product</span></li>
+        <li><b>2</b><span><strong>We record</strong> phone + laptop</span></li>
+        <li><b>3</b><span><strong>Video in 48h</strong>, no install</span></li>
+      </ol>
     </div>
 
     <!-- 3. Content placement teardown -->
@@ -495,6 +507,14 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
           <dt>Who is it for?</dt>
           <dd>Founders and growth leads at D2C brands whose traffic is not turning into orders: lots of visits, a stuck conversion rate, or an average order value that will not move.</dd>
         </div>
+        <div>
+          <dt>Do I need to install anything?</dt>
+          <dd>No. We only open your public product page, the way a shopper would. No code, no app, no access to your store admin.</dd>
+        </div>
+        <div>
+          <dt>What happens after the video?</dt>
+          <dd>Nothing, unless you want more. If the video helps and you want us to go deeper into the cart and checkout, reply and we set up a call.</dd>
+        </div>
       </dl>
     </section>
   </main>
@@ -536,7 +556,7 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
     <p class="tagline">Doing things the <span>CROfy</span> way.</p>
     <div class="legal">
       <span>What you tell us stays with us. We won't share your name or numbers without your OK.</span>
-      <span>CROfy · 2026</span>
+      <span><a href="/privacy">Privacy</a> · CROfy · 2026</span>
     </div>
   </div>
 </footer>

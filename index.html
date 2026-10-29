@@ -117,6 +117,7 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
 }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @keyframes pop { to { opacity: 1; transform: scale(1); } }
+@keyframes shimmer { 0% { transform: translateX(-120%) skewX(-18deg); } 45%, 100% { transform: translateX(340%) skewX(-18deg); } }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } }
 
 /* tunnel illustration + problem cards */
@@ -291,7 +292,12 @@ section.block { border-top: 1px solid var(--rule); padding-block: clamp(48px, 7v
   :root { --fold: calc(100svh - 68px - 62px - env(safe-area-inset-bottom, 0px)); }
   body { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
   .sticky { padding: 8px 16px calc(8px + env(safe-area-inset-bottom, 0px)); }
-  .sticky .cta-btn { padding-block: 12px; }
+  .sticky .cta-btn { padding-block: 12px; position: relative; overflow: hidden; isolation: isolate; }
+  /* a light sweep crosses the sticky button every few seconds */
+  @media (prefers-reduced-motion: no-preference) {
+    .sticky .cta-btn::after { content: ""; position: absolute; z-index: -1; inset: 0; width: 45%; background: linear-gradient(105deg, transparent, rgba(255,255,255,.38) 50%, transparent); transform: translateX(-120%) skewX(-18deg); animation: shimmer 3.6s ease-in-out 1s infinite; pointer-events: none; }
+    .sticky.away .cta-btn::after { animation-play-state: paused; }
+  }
   .hero { min-height: calc(100svh - 68px); align-content: center; padding-block: 24px; }
   section.block { min-height: var(--fold); display: flex; flex-direction: column; justify-content: center; padding-block: 20px; }
   #answers { min-height: 0; padding-block: 40px; }

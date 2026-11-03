@@ -1,0 +1,16 @@
+{
+  "name": "crofy",
+  "version": "1.0.0",
+  "description": "CROfy - Conversion rate optimization research for D2C brands",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build step required'",
+    "lint": "echo 'No linting configured'"
+  },
+  "keywords": ["cro", "conversion", "analytics"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  }
+}

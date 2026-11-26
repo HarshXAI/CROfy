@@ -4,6 +4,8 @@ Marketing site for **CROfy**, conversion research for D2C brands: read a live st
 
 **Live:** https://crofy.vercel.app
 
+![CROfy landing page](docs/screenshot.png)
+
 ## Stack
 
 Static HTML/CSS, deployed on Vercel (`vercel.json`). Includes `robots.txt`, `sitemap.xml` and Open Graph assets.
